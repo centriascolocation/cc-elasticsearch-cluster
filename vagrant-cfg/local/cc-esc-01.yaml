@@ -1,0 +1,18 @@
+
+elasticsearch::config:
+  node.name: esn1
+elasticsearch::init_defaults:
+  ES_HEAP_SIZE: 256M
+
+elasticsearch::instances:
+ esn1:
+    config:
+      cluster.name: cclabor
+      network.host: 172.31.20.11
+
+elasticsearch::plugins:
+  'mobz/elasticsearch-head/1.0.0':
+    ensure: 'present'
+    module_dir: 'head'
+    instances:
+      - 'esn1'

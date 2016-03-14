@@ -1,0 +1,22 @@
+
+elasticsearch::config:
+  node.name: esn3
+elasticsearch::init_defaults:
+  ES_HEAP_SIZE: 256M
+
+elasticsearch::instances:
+ esn3:
+    config:
+      cluster.name: cclabor
+      network.host: 172.31.20.13
+      discovery.zen.ping.unicast.hosts: 
+        - cc-esc-01
+        - cc-esc-02
+        - cc-esc-03
+
+elasticsearch::plugins:
+  'mobz/elasticsearch-head/1.0.0':
+    ensure: 'present'
+    module_dir: 'head'
+    instances:
+      - 'esn3'

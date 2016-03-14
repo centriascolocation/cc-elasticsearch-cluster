@@ -1,0 +1,5 @@
+/.vagrant
+/.tmp
+.DS_Store
+puppet-environments-src/*
+/modules

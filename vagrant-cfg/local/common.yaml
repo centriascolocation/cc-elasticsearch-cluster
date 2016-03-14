@@ -1,0 +1,21 @@
+apt::update:
+  frequency: 'always'
+apt::purge:
+  sources.list.d: true
+  purge_sources_list: false
+  purge_preferences_d: false
+apt::sources:
+  'puppetlabs':
+    location: 'http://apt.puppetlabs.com'
+    repos: 'main'
+    key:
+      id: '47B320EB4C7C375AA9DAE1A01054B7A24BD6EC30'
+      server: 'pgp.mit.edu'
+apt::ppas: 
+  'ppa:ondrej/php':
+    ensure: present
+
+elasticsearch::manage_repo: true
+elasticsearch::repo_version: '2.x'
+elasticsearch::java_install: true
+

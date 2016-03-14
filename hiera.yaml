@@ -1,0 +1,13 @@
+---
+:backends:
+  - yaml
+
+:yaml:
+    :datadir: /vagrant
+
+:hierarchy:
+  - "vagrant-cfg/local/%{::hostname}"
+  - "vagrant-cfg/local/common"
+
+:merge_behavior: deeper
+:logger: console
