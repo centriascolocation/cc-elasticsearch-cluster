@@ -17,6 +17,5 @@ elasticsearch::instances:
 elasticsearch::plugins:
   'mobz/elasticsearch-head/1.0.0':
     ensure: 'present'
-    module_dir: 'head'
     instances:
       - 'esn3'
