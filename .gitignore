@@ -2,4 +2,6 @@
 /.tmp
 .DS_Store
 puppet-environments-src/*
-/modules
+/modules/*
+!/modules/.gitkeep
+
