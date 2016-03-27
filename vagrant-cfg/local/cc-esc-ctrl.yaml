@@ -1,0 +1,9 @@
+kibana4::config:
+  version:           '4.4.2'
+  ensure:            'present'
+  server.port:       5601
+  server.host:       '0.0.0.0'
+  elasticsearch.url: 'http://172.31.20.11:9200'
+
+
+

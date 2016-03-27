@@ -44,6 +44,9 @@ node default {
     ensure       => 'present',
     ip           => '172.31.20.13',
   }
-
+  host { 'cc-esc-ctrl':
+    ensure       => 'present',
+    ip           => '172.31.20.10',
+  }
 }
 

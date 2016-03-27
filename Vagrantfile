@@ -57,5 +57,24 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision :shell, :inline => "echo $'\360\237\215\273'"
   end
 
+  config.vm.define "es-ctrl" do |ubuntu|
+    ubuntu.vm.box      = "mayflower/trusty64-puppet3"
+    ubuntu.vm.hostname = "cc-esc-ctrl"
+    ubuntu.vm.network    "private_network", ip: "172.31.20.10"
+
+    ubuntu.vm.provision "puppet-bootstrap", type: "puppet" do |puppet|
+      puppet.module_path    = "modules"
+      puppet.manifest_file  = 'bootstrap.pp'
+    end
+
+    ubuntu.vm.provision "puppet", type: "puppet" do |puppet|
+      puppet.module_path       = "modules"
+      puppet.manifest_file     = "site.pp"
+      puppet.hiera_config_path = "hiera.yaml"
+    end
+
+    ubuntu.vm.provision :shell, :inline => "echo $'\360\237\215\273'"
+  end
+
 
 end
