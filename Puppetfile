@@ -14,4 +14,4 @@ mod 'elasticsearch',
   :git    => 'https://github.com/centriascolocation/puppet-elasticsearch.git',
   :branch => 'fix_apt_module'
 
-
+mod 'lesaux/kibana4',              '1.0.13'
